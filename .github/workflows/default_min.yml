@@ -23,7 +23,7 @@ jobs:
     env:
       SMTP_SERVER: mail.sonic.net
       SMTP_PORT: 587
-      MAIL_SUJECT: "GitHub mail"
+      MAIL_SUBJECT: "GitHub mail"
       MAIL_BODY: "Sent and email"
       FROME: "shorner@sonic.net"
       TO: "zephod4321@gmail.com"
