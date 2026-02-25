@@ -19,6 +19,13 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      SMTP_SERVER: mail.sonic.net
+      SMTP_PORT: 587
+      MAIL_SUBJECT: "GitHub mail"
+      MAIL_BODY: "Send an email"
+      FROM: "shorner@sonic.net"
+      TO: "zephod4321@gmail.com"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,7 +35,13 @@ jobs:
       with:
         server_address: ${{ env.SMTP_SERVER }}
         server_port: ${{ env.SMTP_PORT }}
-        secure: false
+        secure: false   # true if your server requires TLS on connect; with STARTTLS use false
+        username: ${{ secrets:MAIL_USERNAME }}
+        password: ${{ secrets:MAIL_PASSWORD }}
+        subject: ${{ env.MAIL_SUBJECT }}
+        to: ${{ env.TO }}
+        body: ${{ env.MAIL_BODY }}
+
         
         
 
