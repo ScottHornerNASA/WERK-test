@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
   username: shorner
-  password: 9iuy%^TTGG
+  password: "9iuy%^TTGG"
   server_address: mail.sonic.net
   server_port: 587
   subject: Github mail
