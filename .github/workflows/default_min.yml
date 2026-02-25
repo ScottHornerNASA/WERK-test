@@ -20,10 +20,28 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-   username: shorner
-   password: "9iuy%^TTGG"
-   server_address: mail.sonic.net
-   server_port: 587
-   subject: Github mail
-   body: Sent an email
-   to: scott.d.horner@nasa.gov
+    env:
+      SMTP_SERVER: mail.sonic.net
+      SMTP_PORT: 587
+      MAIL_SUJECT: "GitHub mail"
+      MAIL_BODY: "Sent and email"
+      FROME: "shorner@sonic.net"
+      TO: "zephod4321@gmail.com"
+  
+    steps:
+      # - name: Checkout (optional if you don’t need repo files)
+      #  uses: actions/checkout@v4
+
+      - name: Send email via SMTP
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ env.SMTP_SERVER }}
+          server_port: ${{ env.SMTP_PORT }}
+          secure: false                  # true if your server requires TLS on connect; with STARTTLS use false
+          username: shorner
+          password: "9iuy%^TTGG"
+          subject: ${{ env.MAIL_SUBJECT }}
+          to: ${{ env.TO }}
+          from: ${{ env.FROM }}
+          body: ${{ env.MAIL_BODY }}
+
