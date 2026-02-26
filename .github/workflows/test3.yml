@@ -32,22 +32,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Send email via SMTP
-      uses: dawidd6/action-send-mail@v3
-      with:
-        # SMTP Server
-        server_address: ${{ env.SMTP_SERVER }}
-        server_port: ${{ env.SMTP_PORT }}
-        secure: false   # true if your server requires TLS on connect; with STARTTLS use false
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # SMTP Server
+          server_address: ${{ env.SMTP_SERVER }}
+          server_port: ${{ env.SMTP_PORT }}
+          secure: false   # true if your server requires TLS on connect; with STARTTLS use false
 
-        # Credentials
-        username: ${{ secrets.MAIL_USERNAME }}
-        password: ${{ secrets.MAIL_PASSWORD }}
+          # Credentials
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
 
-        # Message
-        subject: ${{ env.MAIL_SUBJECT }}
-        to: ${{ env.TO }}
-        body: ${{ env.MAIL_BODY }}    
-        from: ${{ env.MAIL_FROM }}
+          # Message
+          subject: ${{ env.MAIL_SUBJECT }}
+          to: ${{ env.TO }}
+          body: ${{ env.MAIL_BODY }}    
+          from: ${{ env.FROM }}
 
        # Runs a single command using the runners shell
        # -name: Run a one-line script
