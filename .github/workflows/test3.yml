@@ -32,6 +32,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Send email via SMTP
+        run: echo 'I am here' continue-on-error: 
         uses: dawidd6/action-send-mail@v10
         with:
           # SMTP Server
