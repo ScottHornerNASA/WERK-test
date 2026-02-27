@@ -26,7 +26,7 @@ jobs:
       SMTP_PORT: 465
       MAIL_SUBJECT: "GitHub mail"
       MAIL_BODY: "Send an email"
-      FROM: "shorner@sonic.net"
+      FROM: "scott.d.horner@nasa.gov"
       TO: "zephod4321@gmail.com"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
