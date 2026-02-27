@@ -27,7 +27,7 @@ jobs:
       MAIL_SUBJECT: "GitHub mail"
       MAIL_BODY: "Send an email"
       FROM: "scott.d.horner@nasa.gov"
-      TO: "zephod4321@gmail.com"
+      TO: "scott.d.horner@nasa.gov"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
